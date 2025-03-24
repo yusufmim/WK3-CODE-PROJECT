@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flatadango - Movie Tickets</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Flatadango</h1>
+        <h3>BUY MOVIE TICKETS</h3>
+    </header>
+
+    <main>
+        <section id="movie-list">
+            <h2>Movies</h2>
+            <ul id="films"></ul>
+        </section>
+
+        <section id="movie-details">
+            <h2>Movie Details</h2>
+            <img id="poster" src="" alt="Movie Poster">
+            <h3 id="title"></h3>
+            <p><strong>Runtime:</strong> <span id="runtime"></span> min</p>
+            <p><strong>Showtime:</strong> <span id="showtime"></span></p>
+            <p><strong>Available Tickets:</strong> <span id="tickets"></span></p>
+            <p id="description"></p>
+            <button id="buy-ticket">Buy Ticket</button>
+            <button id="delete-movie">Delete Movie</button>
+        </section>
+
+        <section id="add-movie">
+            <h2>Add New Movie</h2>
+            <form id="movie-form">
+                <input type="text" id="new-title" placeholder="Movie Title" required>
+                <input type="text" id="new-runtime" placeholder="Runtime (min)" required>
+                <input type="text" id="new-showtime" placeholder="Showtime (e.g. 7:30 PM)" required>
+                <input type="text" id="new-capacity" placeholder="Theater Capacity" required>
+                <input type="text" id="new-poster" placeholder="Poster URL" required>
+                <textarea id="new-description" placeholder="Movie Description" required></textarea>
+                <button type="submit">Add Movie</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
