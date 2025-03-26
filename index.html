@@ -5,44 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flatadango - Movie Tickets</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <h1>Flatadango</h1>
-        <h3>BUY MOVIE TICKETS</h3>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-overlay">
+            <h1>KIBERAMOVIEMAX</h1>
+            <h3>BUY MOVIE TICKETS</h3>
+            <a href="#movie-list" class="cta-btn">Book Now</a>
+        </div>
     </header>
 
+    <!-- Main Content -->
     <main>
-        <section id="movie-list">
-            <h2>Movies</h2>
-            <ul id="films"></ul>
-        </section>
+       <!-- Grid Container -->
+<div class="movie-container">
+    <!-- Movie List Section -->
+    <section id="movie-list" class="movie-list">
+        <h2>MOVIES</h2>
+        <ul id="films" class="films"></ul>
+    </section>
 
-        <section id="movie-details">
-            <h2>Movie Details</h2>
-            <img id="poster" src="" alt="Movie Poster">
-            <h3 id="title"></h3>
-            <p><strong>Runtime:</strong> <span id="runtime"></span> min</p>
-            <p><strong>Showtime:</strong> <span id="showtime"></span></p>
-            <p><strong>Available Tickets:</strong> <span id="tickets"></span></p>
-            <p id="description"></p>
-            <button id="buy-ticket">Buy Ticket</button>
-            <button id="delete-movie">Delete Movie</button>
-        </section>
+    <!-- Movie Details Section -->
+    <section id="movie-details" class="movie-details">
+        <h2>MOVIE DETAILS</h2>
+        <img id="poster" src="" alt="Movie Poster" class="movie-poster">
+        <h3 id="title" class="movie-title"></h3>
+        <p><strong>Runtime:</strong> <span id="runtime" class="movie-runtime"></span> min</p>
+        <p><strong>Showtime:</strong> <span id="showtime" class="movie-showtime"></span></p>
+        <p><strong>Available Tickets:</strong> <span id="tickets" class="movie-tickets"></span></p>
+        <p id="description" class="movie-description"></p>
+        <button id="buy-ticket" class="btn">Buy Ticket</button>
+        <button id="delete-movie" class="btn">Delete Movie</button>
+    </section>
+</div>
 
-        <section id="add-movie">
+        <!-- Add New Movie Section -->
+        <section id="add-movie" class="add-movie">
             <h2>Add New Movie</h2>
-            <form id="movie-form">
-                <input type="text" id="new-title" placeholder="Movie Title" required>
-                <input type="text" id="new-runtime" placeholder="Runtime (min)" required>
-                <input type="text" id="new-showtime" placeholder="Showtime (e.g. 7:30 PM)" required>
-                <input type="text" id="new-capacity" placeholder="Theater Capacity" required>
-                <input type="text" id="new-poster" placeholder="Poster URL" required>
-                <textarea id="new-description" placeholder="Movie Description" required></textarea>
-                <button type="submit">Add Movie</button>
+            <form id="movie-form" class="movie-form">
+                <input type="text" id="new-title" placeholder="Movie Title" required class="form-input">
+                <input type="text" id="new-runtime" placeholder="Runtime (min)" required class="form-input">
+                <input type="text" id="new-showtime" placeholder="Showtime (e.g. 7:30 PM)" required class="form-input">
+                <input type="text" id="new-capacity" placeholder="Theater Capacity" required class="form-input">
+                <input type="text" id="new-poster" placeholder="Poster URL" required class="form-input">
+                <textarea id="new-description" placeholder="Movie Description" required class="form-textarea"></textarea>
+                <button type="submit" class="btn">Add Movie</button>
             </form>
         </section>
     </main>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2025 KIBERAMOVIEMAX. All rights reserved.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
