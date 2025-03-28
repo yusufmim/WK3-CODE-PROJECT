@@ -1,4 +1,3 @@
-//code 
 document.addEventListener("DOMContentLoaded", () => {
     const movieList = document.getElementById("films");
     const title = document.getElementById("title");
@@ -13,18 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const API_URL = "http://localhost:3000/films";
 
-
-    fetch("http://localhost:3000/films")
-  .then(res => res.json())
-  .then(data => console.log(data))
-  .catch(err => console.error(err));
-
-
     // Fetch and display all movies
     function fetchMovies() {
+        console.log("Fetching movies...");
         fetch(API_URL)
             .then(res => res.json())
             .then(movies => {
+                console.log("Movies fetched:", movies); // Log movies fetched
+
                 movieList.innerHTML = ""; // Clear existing movie list
 
                 movies.forEach(movie => {
@@ -41,11 +36,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             })
             .catch(err => console.error("Error fetching movies:", err));
-
     }
 
     // Display selected movie details
     function displayMovie(movie) {
+        console.log("Displaying movie:", movie); // Log the movie being displayed
         title.textContent = movie.title;
         poster.src = movie.poster;
         poster.alt = `${movie.title} Poster`;
@@ -64,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Buy a ticket
     buyTicketBtn.addEventListener("click", () => {
         const movieId = buyTicketBtn.dataset.id;
+        console.log(`Buying ticket for movie ID: ${movieId}`); // Log ticket purchase attempt
 
         fetch(`${API_URL}/${movieId}`)
             .then(res => res.json())
@@ -91,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Delete a movie
     deleteMovieBtn.addEventListener("click", () => {
         const movieId = deleteMovieBtn.dataset.id;
+        console.log(`Deleting movie with ID: ${movieId}`); // Log movie deletion attempt
 
         fetch(`${API_URL}/${movieId}`, { method: "DELETE" })
             .then(() => {
@@ -124,6 +121,8 @@ document.addEventListener("DOMContentLoaded", () => {
             description: document.getElementById("new-description").value
         };
 
+        console.log("Adding new movie:", newMovie); // Log the new movie being added
+
         fetch(API_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -131,7 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then(() => {
             movieForm.reset();
-            fetchMovies(); // Refresh movie list
+            fetchMovies(); // Refresh movie list after adding new movie
         })
         .catch(err => console.error("Error adding movie:", err));
     });
