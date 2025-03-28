@@ -13,6 +13,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const API_URL = "http://localhost:3000/films";
 
+
+    fetch("http://localhost:3000/films")
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
+
+
     // Fetch and display all movies
     function fetchMovies() {
         fetch(API_URL)
