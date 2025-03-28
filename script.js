@@ -1,3 +1,4 @@
+//code 
 document.addEventListener("DOMContentLoaded", () => {
     const movieList = document.getElementById("films");
     const title = document.getElementById("title");
@@ -33,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             })
             .catch(err => console.error("Error fetching movies:", err));
+
     }
 
     // Display selected movie details
