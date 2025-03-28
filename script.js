@@ -10,7 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const deleteMovieBtn = document.getElementById("delete-movie");
     const movieForm = document.getElementById("movie-form");
 
-    const API_URL = "http://localhost:3000/films";
+    const API_URL = "http://localhost:4000/films";
+    fetch('http://localhost:4000/films')
+
 
     // Fetch and display all movies
     function fetchMovies() {
